@@ -1,0 +1,13 @@
+
+set page-padding 10
+
+map <C-i> zoom in
+map <C-o> zoom out
+
+
+
+# colors
+set statusbar-bg "#000000"
+set statusbar-fg "#CC0000"
+set default-fg "#FFFFFF"
+set default-bg "#555555"

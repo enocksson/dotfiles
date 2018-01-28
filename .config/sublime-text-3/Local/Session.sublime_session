@@ -1,0 +1,283 @@
+{
+	"folder_history":
+	[
+	],
+	"last_version": 3143,
+	"last_window_id": 1,
+	"log_indexing": false,
+	"settings":
+	{
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/david/Dropbox/Simple Base Model Health/src/main.jl",
+					"settings":
+					{
+						"buffer_size": 14776,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/david/Dropbox/Simple Base Model Health/src/figures.jl",
+					"settings":
+					{
+						"buffer_size": 2835,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 195.0,
+				"last_filter": "isntall",
+				"selected_items":
+				[
+					[
+						"isntall",
+						"Colorsublime: Install Theme"
+					],
+					[
+						"insta",
+						"Colorsublime: Install Theme"
+					],
+					[
+						"colo",
+						"Colorsublime: Install Theme"
+					],
+					[
+						"package control",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 461.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/david/Documents/introduction.tex",
+				"/home/david/Dropbox/Simple Base Model Health/src/ModelTemplate.tex",
+				"/home/david/Documents/introduction.",
+				"/home/david/Dropbox/Simple Base Model Health/src/main.jl"
+			],
+			"find":
+			{
+				"height": 25.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"2000",
+					"1000"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 0,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/david/Dropbox/Simple Base Model Health/src/main.jl",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 14776,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										12169,
+										12169
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Julia/Julia.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 3965.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/david/Dropbox/Simple Base Model Health/src/figures.jl",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2835,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1123,
+										1123
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Julia/Julia.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 255.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 25.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,967,39,1900,1060,3840,1080",
+			"project": "",
+			"replace":
+			{
+				"height": 46.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

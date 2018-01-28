@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 source ~/.xinitrc
-
+source /usr/share/git/completion/git-prompt.sh
 alias ls='ls --color=auto'
 
 # Color mapping
@@ -28,4 +28,5 @@ CYAN='\[\033[1;36m\]'
 NC='\[\033[0m\]'
 
 #PS1='[\u@\h \W]\$ '
-PS1="$YELLOW[\u]$RED\w $ $NC"
+#PS1="$YELLOW[\u]$RED\w $ $NC"
+PS1="$RED[$YELLOW\u$GREEN@$BLUE\h \W$(__git_ps1 " (%s)")$RED]$NC\$ "

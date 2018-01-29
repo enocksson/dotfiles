@@ -1,0 +1,10 @@
+# Speed up scrolling for the document viewer
+"^zathura$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+
+
+"^firefox$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+

@@ -1,90 +1,74 @@
 # --------------------------------------------------------------- #
 # i3 Configurations						  #
 # --------------------------------------------------------------- #
-gaps inner 15
-gaps outer 0
 
+# Mod Key, Floating Modifier, Terminal Emulator, and Kill Command
 set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-font pango: System San Francisco Display 12
-#font pango:DejaVu Sans Mono 8
-
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
 bindsym $mod+Return exec urxvt
-
-# kill focused window
 bindsym $mod+Shift+q kill
 
-#bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start rofi
+bindsym $mod+d exec  rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -fake-transparency
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# Font for window titles. Will also be used by the bar unless a different font
+font pango: System San Francisco, Font Awesome 14
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# Definfing some colors
+set $bg-color 	          #2f343f
+set $inactive-bg-color    #2f343f
+set $text-color           #f3f4f5
+set $inactive-text-color  #676E7D
+set $urgent-bg-color      #E53935
+set $focused-border-color #1793d0
+set $indicator-color      #00ff00
+ 
+# window colors           border                background            text                 indicator
+client.focused            $focused-border-color $focused-border-color $text-color          $indicator-color
+client.unfocused          $inactive-bg-color    $inactive-bg-color    $inactive-text-color $indicator-color
+client.focused_inactive   $inactive-bg-color    $inactive-bg-color    $inactive-text-color $indicator-color
+client.urgent             $urgent-bg-color 	    $urgent-bg-color 	  $text-color          $indicator-color
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+new_window pixel 3
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# Windows Focus and Moving
+bindsym $mod+j               focus      left         
+bindsym $mod+Left            focus      left         
+bindsym $mod+k               focus      down         
+bindsym $mod+Down            focus      down         
+bindsym $mod+l               focus      up           
+bindsym $mod+Up              focus      up           
+bindsym $mod+semicolon       focus      right        
+bindsym $mod+Right           focus      right        
+bindsym $mod+Shift+j         move       left         
+bindsym $mod+Shift+Left      move       left         
+bindsym $mod+Shift+k         move       down         
+bindsym $mod+Shift+Down      move       down         
+bindsym $mod+Shift+l         move       up           
+bindsym $mod+Shift+Up        move       up           
+bindsym $mod+Shift+semicolon move       right        
+bindsym $mod+Shift+Right     move       right        
+bindsym $mod+h               split      h            
+bindsym $mod+v               split      v            
+bindsym $mod+f               fullscreen toggle       
+bindsym $mod+s               layout     stacking     
+bindsym $mod+w               layout     tabbed       
+bindsym $mod+e               layout     toggle split 
+bindsym $mod+Shift+space     floating   toggle       
+bindsym $mod+space           focus      mode_toggle  
+bindsym $mod+a               focus      parent       
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-set $workspace1 "1: Terminals "
-set $workspace2 "2: FireFox "
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10 Music "
+# Workspace Names and Settings
+set $workspace1 "1: "  
+set $workspace2 "2: "  
+set $workspace3 "3: "  
+set $workspace4 "4: "  
+set $workspace5 "5"     
+set $workspace6 "6"     
+set $workspace7 "7"     
+set $workspace8 "8"     
+set $workspace9 "9"     
+set $workspace10 "10 " 
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -110,16 +94,24 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-assign [class="Firefox"] $workspace2
-
-
-
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+assign [class="Firefox"] $workspace2
+assign [class="Mailspring"] $workspace3
+assign [class="Spotify"] $workspace10
+
+# Custom Key Bindings
+bindsym $mod+shift+x exec i3lock
+bindsym $mod+shift+w exec ~/lock.sh
+exec xautolock -time 5 -locker ~/.i3/lock.sh
+bindsym $mod+b exec firefox
+bindsym $mod+m exec mailspring
+
+# Gaps 
+gaps inner 15
+gaps outer 0
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -147,21 +139,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
-        status_command i3blocks -c ~/.i3/i3blocks.conf
-	position top
-	colors {
-		background $bg-color
-	    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
+         status_command i3blocks -c ~/.i3/i3blocks.conf
+	     position top
+	     colors {
+		             background $bg-color
+	    	         separator #757575
+		             #                  border             background         text
+		             focused_workspace  $bg-color          $bg-color          $text-color
+		             inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		             urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+         }
 }
-
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1%; exec pkill -RTMIN+10 i3blocks  
@@ -169,36 +159,39 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1%; e
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle; exec pkill -RTMIN+10 i3blocks
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Launch Applications on startup
 exec i3-sensible-terminal
+exec_always compton
+exec_always imwheel
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always xrandr --output HDMI2 --off --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output VGA1 --mode 1920x1080 --pos 1920x0 --rotate normal
 exec_always feh --bg-scale --no-xinerama  /home/david/Pictures/wallpaper.jpg
 exec python2 /usr/bin/dropbox.py start
 
-# Custom Key Bindings
-bindsym $mod+shift+x exec i3lock
 
 
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
 
-# window colors
-#                       	border              	background         	text                 	indicator
-client.focused          	#1793d0 		#1793d0              	$text-color          	#00ff00
-client.unfocused        	$inactive-bg-color 	$inactive-bg-color 	$inactive-text-color 	#00ff00
-client.focused_inactive 	$inactive-bg-color 	$inactive-bg-color 	$inactive-text-color 	#00ff00
-client.urgent 			$urgent-bg-color 	$urgent-bg-color 	$text-color #00ff00
 
-new_window pixel 3
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec  rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -fake-transparency
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
